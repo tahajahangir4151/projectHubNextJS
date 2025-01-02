@@ -9,9 +9,9 @@ const Page = () => {
       <div className="h-[530px] relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
         <div className="absolute inset-0 w-full h-full z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
         <Boxes />
-        <h1 className="heading relative">Tailwind is Awesome</h1>
+        <h1 className="heading relative">Welcome To ProjectHub</h1>
         <p className="sub-heading !max-w-3xl relative">
-          Framer motion is the best animation library ngl
+          Where project meet like-minded people.
         </p>
         <SearchForm />
       </div>
@@ -26,7 +26,7 @@ const Page = () => {
             { id: 126, title: "A NEW PROJECT", desc: "A GREATE DESCRIPTION" },
             { id: 127, title: "A NEW PROJECT", desc: "A GREATE DESCRIPTION" },
           ].map((item, i) => (
-            <ThreeDCardDemo key={item.id}/>
+            <ThreeDCardDemo key={item.id} />
           ))}
         </ul>
       </section>
