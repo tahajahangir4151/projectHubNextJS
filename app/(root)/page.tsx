@@ -1,7 +1,22 @@
+import React from "react";
 import SearchForm from "@/components/SearchForm";
 import { ThreeDCardDemo } from "@/components/ThreeDCard";
 import { Boxes } from "@/components/ui/background-boxes";
-import React from "react";
+import { auth } from "@/auth";
+import { sanityFetch } from "@/sanity/lib/live";
+import { PROJECT_QUERY } from "@/sanity/lib/queries";
+
+export default async function Home({searchParams} : {
+  searchParams : Promise<{query? : string}>
+}) {
+  const query = (await searchParams).query;
+  
+  const params = {search : query || null}
+  const session = await auth();
+  // console.log(session?.id);
+
+  const {data : posts} = await sanityFetch({query : PROJECT_QUERY, params})
+
 
 const Page = () => {
   return (
